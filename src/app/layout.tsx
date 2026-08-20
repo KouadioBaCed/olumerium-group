@@ -69,9 +69,6 @@ export const metadata: Metadata = {
       "Groupe multinational panafricain basé en Côte d’Ivoire, engagé dans la création de valeur durable.",
     images: ["/logo/olumerium_logo_normal.png"],
   },
-  icons: {
-    icon: "/logo/olumerium_logo_transparent.png",
-  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
