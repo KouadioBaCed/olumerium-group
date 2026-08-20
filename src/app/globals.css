@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Charte graphique OLUMERIUM GROUP */
+  --color-navy: #020814;
+  --color-navy-deep: #071c3a;
+  --color-navy-corporate: #0b2a54;
+  --color-royal: #1555a0;
+  --color-gold: #c9972b;
+  --color-gold-light: #f2c866;
+  --color-gold-champagne: #e6b94f;
+  --color-pearl: #d9dee5;
+  --color-offwhite: #f5f6f8;
+  --color-ink: #0a0a0a;
+
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-label: var(--font-montserrat), "Segoe UI", sans-serif;
+  --font-body: var(--font-inter), "Segoe UI", sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-navy: var(--color-navy);
+  --color-navy-deep: var(--color-navy-deep);
+  --color-navy-corporate: var(--color-navy-corporate);
+  --color-royal: var(--color-royal);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-gold-champagne: var(--color-gold-champagne);
+  --color-pearl: var(--color-pearl);
+  --color-offwhite: var(--color-offwhite);
+  --color-ink: var(--color-ink);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-display: var(--font-display);
+  --font-label: var(--font-label);
+  --font-body: var(--font-body);
+
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-navy);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* Thin gold divider used throughout the brand system */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--color-gold) 0%,
+    var(--color-gold-light) 50%,
+    var(--color-gold) 100%
+  );
+}
+
+.text-gold-gradient {
+  background: linear-gradient(
+    90deg,
+    #8c6418 0%,
+    var(--color-gold) 35%,
+    var(--color-gold-light) 60%,
+    var(--color-gold) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-navy-gradient {
+  background: linear-gradient(
+    160deg,
+    var(--color-navy) 0%,
+    var(--color-navy-deep) 55%,
+    var(--color-navy-corporate) 100%
+  );
+}
+
+/* Focus visibility for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
