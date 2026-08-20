@@ -8,7 +8,7 @@ const FIELDS: {
   label: string;
   type: string;
   required?: boolean;
-  span?: boolean;
+  span?: boolean; 
 }[] = [
   { name: "lastName", label: "Nom", type: "text", required: true },
   { name: "firstName", label: "Prénom", type: "text", required: true },
