@@ -16,6 +16,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     sector: "Finance & Investissements",
     description:
       "Solutions financières et développement d’opportunités stratégiques.",
+    website: "https://olumerium-finance.netlify.app/",
   },
   {
     id: "capital",
@@ -135,6 +136,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     sector: "Développement social",
     description:
       "Engagement social et communautaire du Groupe au service des populations.",
+    website: "https://olumerium-fondation.netlify.app/",
   },
 ];
 

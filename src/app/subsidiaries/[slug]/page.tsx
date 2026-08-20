@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
@@ -83,9 +83,22 @@ export default async function SubsidiaryPage({
               leur confirmation officielle par Olumerium Group.
             </p>
           </Reveal>
-          <Button href="/contact" variant="outline-dark" className="mt-10">
-            Contacter le Groupe
-          </Button>
+          <div className="mt-10 flex flex-wrap gap-4">
+            {subsidiary.website && (
+              <a
+                href={subsidiary.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2.5 border border-gold bg-gold px-7 py-3.5 font-label text-[11px] font-semibold uppercase tracking-[0.2em] text-navy transition-all hover:bg-transparent hover:text-gold"
+              >
+                Visiter le site officiel
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            )}
+            <Button href="/contact" variant="outline-dark">
+              Contacter le Groupe
+            </Button>
+          </div>
         </Container>
       </section>
 
